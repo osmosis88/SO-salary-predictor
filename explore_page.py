@@ -31,7 +31,7 @@ def clean_education(x):
     
 @st.cache ## cache's the code below so we don't have to reload each time the code is refreshed.
 def load_data():
-	url = https://drive.google.com/file/d/1XMLadcyLhIvax7VPL3I5OiFdTqIFSH1l/view?usp=drive_link
+	url = https://drive.google.com/uc?id=1XMLadcyLhIvax7VPL3I5OiFdTqIFSH1l/view?usp=drive_link
 	output = "survey_results_public.csv"
 	gdown.download(url, output, quiet=False)
 
