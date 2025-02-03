@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import gdown 
+
 
 def shorten_categories(categories, cutoff):
     categorical_map = {}
@@ -29,8 +31,12 @@ def clean_education(x):
     
 @st.cache ## cache's the code below so we don't have to reload each time the code is refreshed.
 def load_data():
-	
-	df = pd.read_csv("survey_results_public.csv")
+	url = https://drive.google.com/file/d/1XMLadcyLhIvax7VPL3I5OiFdTqIFSH1l/view?usp=drive_link
+	output = "survey_results_public.csv"
+	gdown.download(url, output, quiet=False)
+
+	df = pd.read_csv(output)
+	#df = pd.read_csv("survey_results_public.csv")
 	df = df[["Country", "EdLevel", "YearsCodePro", "Employment", "ConvertedComp"]]
 	df.rename({"ConvertedComp": "Salary"}, axis=1, inplace=True)
 	df = df[df["Salary"].notnull()]
