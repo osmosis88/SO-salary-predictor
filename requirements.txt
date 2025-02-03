@@ -3,4 +3,5 @@ numpy
 streamlit
 scikit-learn
 matplotlib
+gdown
 
